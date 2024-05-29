@@ -1,0 +1,149 @@
+body {
+  font-family: var(--font-text);
+  background-color: var(--main-bg-color);
+  color: #fff;
+  font-size: var(--size-base);
+  margin: 0;
+}
+
+.container {
+  max-width: 1140px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 760px) {
+    max-width: 300px;
+  }
+
+  @media (min-width: 760px) and (max-width: 980px) {
+    max-width: 660px;
+  }
+
+  @media (min-width: 980px) and (max-width: 1440px) {
+    max-width: 990px;
+  }
+}
+
+aside {
+  background-color: var(--sidebar-bg-color);
+  width: 260px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+aside > nav > div:first-child > img {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+}
+
+aside > nav > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  padding: 20px;
+}
+
+aside > nav > div:first-child {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.main-layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.main-container {
+  width: 100%;
+  margin-left: 260px;
+  padding-bottom: var(--space-section);
+}
+
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+h1 {
+  font-family: var(--font-title);
+  font-size: var(--h1);
+  text-align: center;
+  color: var(--gold-400);
+}
+
+h2 {
+  font-family: var(--font-title);
+  font-size: var(--h2);
+  text-align: center;
+  color: var(--gold-400);
+}
+
+h3 {
+  font-weight: 500;
+  font-size: var(--h3);
+}
+
+.btn {
+  border-radius: var(--secondary-border-radius);
+  padding: var(--space-xs) var(--space-s);
+  border: none;
+  font-weight: var(--weight-600);
+  text-align: center;
+  width: fit-content;
+}
+
+.mint-primary {
+  background-color: var(--mint-500);
+  color: var(--mint-200);
+  transition: ease-in 250ms;
+
+  &:hover {
+    background-color: var(--mint-300);
+    color: var(--mint-900);
+    transform: scale(1.1);
+  }
+}
+
+.mint-secondary {
+  background-color: var(--mint-900);
+  color: var(--mint-400);
+  transition: ease-in 250ms;
+
+  &:hover {
+    background-color: var(--mint-500);
+    color: var(--mint-200);
+    transform: scale(1.1);
+  }
+}
+
+.delete-btn {
+  background-color: hsl(0, 63%, 60%);
+  color: hsl(0, 63%, 20%);
+  transition: ease-in 250ms;
+
+  &:hover {
+    background-color: hsl(0, 63%, 40%);
+    color: hsl(0, 63%, 96%);
+    transform: scale(1.1);
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #d2ccc6;
+}

@@ -1,0 +1,113 @@
+<main class="main-container">
+    <section class="top-bar ">
+        <div>
+            <div>
+            <a href="?page=personnages"><img src="../public/assets/img/icons/icon-arrow-left.svg"/>Retour</a> 
+            </div>
+
+            <input type="search" class="searchbar" placeholder="Rechercher un film, un personnage..."/>
+        </div>  
+        <div>
+            <div class="profile">
+                <p>orinaya</p>
+                <img src="../public/assets/img/profile.png"/>
+            </div>
+            <div class="logout">
+                <img src="../public/assets/img/icons/icon-logout.svg"/>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="form-container container">
+        <h1>Ajouter un personnage</h1>
+
+        <form class="container" action="" method="POST">
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <label for="first_name" class="form-label">Prénom</label>
+                            <input
+                                type="text"
+                                name="first_name"
+                                placeholder="Entrez le prénom du personnage..."
+                            />
+                        </div>
+                        <div>
+                            <label for="last_name" class="form-label">Nom</label>
+                            <input
+                                type="text"
+                                name="last_name"
+                                placeholder="Entrez le nom du personnage..."
+                            />
+                        </div>
+                        <div>
+                            <label for="surname" class="form-label">Surnom</label>
+                            <input
+                                type="text"
+                                name="surname"
+                                placeholder="Entrez le surnom du personnage..."
+                            />
+                        </div>
+                        <div>
+                            <label for="race" class="form-label">Race</label>
+                            <select name="race" class="character-select">
+                                <option value="default">Sélectionner une race</option>
+                                <option value="Homme">Homme</option>
+                                <option value="Hobbit">Hobbit</option>
+                                <option value="Nain">Nain</option>
+                                <option value="Elfe">Elfe</option>
+                                <option value="Maiar">Maiar</option>
+                                <option value="Ent">Ent</option>
+                                <option value="Dragon">Dragon</option>
+                                <option value="Orque">Orque</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="url_picture" class="form-label">Image du personnage</label>
+                            <input
+                                type="text"
+                                name="url_picture"
+                                placeholder="Entrez l'url de l'image"
+                            />
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <label for="character_description" class="form-label">Description du personnage</label>
+                            <textarea
+                                name="character_description"
+                                placeholder="Entrez la description du personnage"
+                            ></textarea>
+                        </div>
+
+                        <div>
+                            <label for="character_title" class="form-label">Titre du personnage</label>
+                            <input
+                                type="text"
+                                name="character_title"
+                                placeholder="Entrez le titre du personnage"
+                                
+                            />
+                        </div>
+
+                        <div>
+                            <label for="weapon" class="form-label">Arme du personnage</label>
+                            <input
+                                type="text"
+                                name="weapon"
+                                placeholder="Entrez une arme du personnage"
+                                
+                            />
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        <button type="submit" class="btn mint-primary" name="addCharacterForm">Valider</button>
+        </form>
+    </div>
+   
+ 
+</main>

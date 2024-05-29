@@ -1,0 +1,125 @@
+<main class="main-container">
+    <section class="top-bar ">
+        <div>
+            <div>
+            <a href="?page=dashboard"><img src="../public/assets/img/icons/icon-arrow-left.svg"/>Retour</a> 
+            </div>
+
+            <input type="search" class="searchbar" placeholder="Rechercher un film, un personnage..."/>
+        </div>  
+        <div>
+            <div class="profile">
+                <p>orinaya</p>
+                <img src="../public/assets/img/profile.png"/>
+            </div>
+            <div class="logout">
+                <img src="../public/assets/img/icons/icon-logout.svg"/>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="form-container container">
+        <h1>Modifier le personnage</h1>
+
+        <?php foreach($characters as $character): ?>
+        <form class="cfcc-form container" action="" method="POST">
+        <input type="hidden" name="id" value="<?= $character['id']; ?>">
+
+        <div>
+            <div>
+                <div>
+                    <label for="first_name" class="form-item_label">Prénom</label>
+                    <input
+                        type="text"
+                        name="first_name"
+                        value="<?= $character['first_name']; ?>"                        
+                        placeholder="Entrez le prénom du personnage..."
+                        class="form-item_input"
+                    />
+                </div>
+                <div>
+                    <label for="last_name" class="form-item_label">Nom</label>
+                    <input
+                        type="text"
+                        name="last_name"
+                        value="<?= $character['last_name']; ?>"
+                        placeholder="Entrez le nom du personnage..."
+                        class="form-item_input"
+                    />
+                </div>
+
+                <div>
+                    <label for="surname" class="form-item_label">Surnom</label>
+                    <input
+                        type="text"
+                        name="surname"
+                        value="<?= $character['surname']; ?>"
+                        placeholder="Entrez le surnom du personnage..."
+                        class="form-item_input"
+                    />
+                </div>
+
+                <div>
+                    <label for="race" class="form-item_label">Race</label>
+                    <select name="race" class="character-select">
+                        <option value="default">Sélectionner une race</option>
+                        <option value="Homme" <?= $character['race'] === 'Homme' ? 'selected' : ''; ?>>Homme</option>
+                        <option value="Hobbit" <?= $character['race'] === 'Hobbit' ? 'selected' : ''; ?>>Hobbit</option>
+                        <option value="Nain" <?= $character['race'] === 'Nain' ? 'selected' : ''; ?>>Nain</option>
+                        <option value="Elfe" <?= $character['race'] === 'Elfe' ? 'selected' : ''; ?>>Elfe</option>
+                        <option value="Maiar" <?= $character['race'] === 'Maiar' ? 'selected' : ''; ?>>Maiar</option>
+                        <option value="Ent" <?= $character['race'] === 'Ent' ? 'selected' : ''; ?>>Ent</option>
+                        <option value="Dragon" <?= $character['race'] === 'Dragon' ? 'selected' : ''; ?>>Dragon</option>
+                        <option value="Orque" <?= $character['race'] === 'Orque' ? 'selected' : ''; ?>>Orque</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="url_picture" class="form-item_label">Image du personnage</label>
+                    <input
+                        type="text"
+                        name="url_picture"
+                        value="<?= $character['url_picture']; ?>"
+                        placeholder="Entrez l'url de l'image"
+                        class="form-item_input"
+                    />
+                </div>
+        </div>
+        <div>
+                <div>
+                    <label for="character_description" class="form-item_label">Description du personnage</label>
+                    <textarea
+                        name="character_description"
+                        placeholder="Entrez la description du personnage"
+                        class="cffi-field cfccfi-area"
+                    ><?= $character['character_description']; ?></textarea>
+                </div>
+
+                <div>
+                    <label for="character_title" class="form-item_label">Titre du personnage</label>
+                    <input
+                        type="text"
+                        name="character_title"
+                        value="<?= $character['character_title']; ?>"
+                        placeholder="Entrez le titre du personnage"
+                        class="form-item_input"
+                    />
+                </div>
+
+                <div>
+                    <label for="weapon" class="form-item_label">Arme du personnage</label>
+                    <input
+                        type="text"
+                        name="weapon"
+                        value="<?= $character['weapon']; ?>"
+                        placeholder="Entrez une arme du personnage"
+                        class="form-item_input"
+                    />
+                </div>
+            </div> 
+        </div>
+            <button type="submit" class="btn mint-primary" name="updateCharacterForm">Valider</button>
+        </form>
+        <?php endforeach; ?>    
+    </div>
+</main>

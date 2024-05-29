@@ -1,0 +1,53 @@
+<main class="main-container">
+    <section class="top-bar ">
+        <div>
+            <div>
+            <a href="?page=dashboard"><img src="../public/assets/img/icons/icon-arrow-left.svg"/>Retour</a> 
+
+            </div>
+
+            <input type="search" class="searchbar" placeholder="Rechercher un film, un personnage..."/>
+        </div>  
+        <div>
+            <a href="?page=login" class="profile">
+                <p>Se connecter</p>
+                <img src="../public/assets/img/profile.png"/>
+            </a>
+            <div class="logout">
+                <img src="../public/assets/img/icons/icon-logout.svg"/>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+    <div class="title-container container">
+        <h1>Citations</h1>
+        <div class="filter-container">
+            <p class="filter-results">
+            <span><?php echo count($quotes); ?></span> results
+            </p>
+        </div>
+    
+    </div>
+
+
+
+    <div class="card-container container">
+        <?php foreach($quotes as $quote): ?>
+            <div  class="card-content quote-card" style="background-image: linear-gradient(hsla(0, 0%, 0%, 0),hsla(0, 0%, 0%, 0), hsl(0, 0%, 0%)), url(<?= $quote['url_picture']; ?>)">
+        
+                <h3><?= $quote['quote']; ?></h3>
+                <p class="quote-movie"><?= $quote['movie_title']; ?></p>
+                <div>                
+                    <p><?= $quote['first_name']; ?></p>
+                    <p><?= $quote['last_name']; ?></p>
+                </div>
+            </div>
+        <?php endforeach; ?>   
+    </div>
+
+    
+</main>

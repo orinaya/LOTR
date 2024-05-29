@@ -1,0 +1,79 @@
+<main class="main-container">
+    <section class="top-bar ">
+        <div>
+            <div>
+            <a href="?page=personnages"><img src="../public/assets/img/icons/icon-arrow-left.svg"/>Retour</a> 
+
+            </div>
+
+            <input type="search" class="searchbar" placeholder="Rechercher un film, un personnage..."/>
+        </div>  
+
+
+        <div>
+            <div class="profile">
+                <p>orinaya</p>
+                <img src="../public/assets/img/profile.png"/>
+            </div>
+            <div class="logout">
+                <img src="../public/assets/img/icons/icon-logout.svg"/>
+            </div>
+        </div>
+
+    </section>
+
+
+    <?php foreach($characters as $character): ?>
+
+    <form method="POST" action="" class="character-details_form"> 
+        <div class="form-button container">
+            <a href="?page=modifier-un-personnage&id=<?= $character['id']; ?>" class="btn mint-primary" name="updateCharacterForm">Modifier le personnage</a>
+            <input type="hidden" name="id" value="<?= $character['id']; ?>">
+            <button type="submit" class="btn delete-btn" name="deleteCharacterForm">Supprimer le personnage</button>
+        </div>
+
+        
+        <div class="character-container container">
+            <div>
+                <div class="character-image">
+                    <img src="<?= $character['url_picture']; ?>"/>
+                </div>
+                <h1><?= $character['first_name']; ?> </h1>
+            </div>
+
+            <div class="character-content">
+                <div>
+                    <p>Prénom</p>
+                    <p><?= $character['first_name']; ?></p>
+                </div>
+                <div>
+                    <p>Nom</p>
+                    <p><?= $character['last_name']; ?></p>
+                </div>
+                <div>
+                    <p>Surnom</p>
+                    <p><?= $character['surname']; ?></p>
+                </div>
+                <div>
+                    <p>Race</p>
+                    <p><?= $character['race']; ?></p>
+                </div>
+                <div>
+                    <p>Arme</p>
+                    <p><?= $character['weapon']; ?></p>
+                </div>
+                <div>
+                    <p>Titre</p>
+                    <p><?= $character['character_title']; ?></p>
+                </div>
+                <div>
+                    <p>Description</p>
+                    <p><?= $character['character_description']; ?></p>
+                </div>
+
+            </div> 
+        </div>
+    </form>
+    <?php endforeach; ?>    
+
+</main>

@@ -1,0 +1,126 @@
+.card-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+  margin-top: var(--space-xl);
+}
+
+.card-section h1:first-of-type {
+  font-size: 32px;
+}
+
+.card-section > h2 {
+  font-size: 32px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-xxl);
+  margin-bottom: var(--space-xl);
+  width: 100%;
+}
+
+.card-content {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: var(--main-border-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  transition: ease-in-out 250ms;
+
+  &:hover {
+    background-size: 108%;
+    filter: brightness(1.1);
+  }
+}
+
+.movie-card {
+  height: 410px;
+  min-width: 28%;
+}
+
+.quote-card {
+  width: 40%;
+  height: 188px;
+  padding: 20px;
+}
+
+.character-card {
+  height: 360px;
+  min-width: 21%;
+}
+
+.movie-card > span {
+  background-color: var(--mint);
+  border-radius: var(--secondary-border-radius);
+  padding: var(--space-xs) var(--space-s);
+  color: var(--olive-100);
+  font-weight: var(--weight-700);
+  position: absolute;
+  right: var(--space-s);
+  top: var(--space-s);
+}
+
+.movie-card > div {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.movie-card > div > div:first-child > span {
+  background-color: hsla(0, 0%, 100%, 0.2);
+  border-radius: var(--secondary-border-radius);
+  padding: 6px 10px;
+  color: #fff;
+  font-weight: var(--weight-600);
+}
+
+.movie-card > div > div:first-child {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.quote-card > div {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  background-color: var(--mint);
+  border-radius: var(--secondary-border-radius);
+  padding: var(--space-xs) var(--space-s);
+  color: var(--olive-200);
+  font-weight: var(--weight-600);
+  position: absolute;
+  right: var(--space-s);
+  top: var(--space-s);
+  font-size: 18px;
+}
+
+.character-card > span {
+  background-color: var(--mint);
+  border-radius: var(--secondary-border-radius);
+  padding: var(--space-xs) var(--space-s);
+  color: var(--olive-100);
+  font-weight: var(--weight-700);
+  position: absolute;
+  right: var(--space-s);
+  top: var(--space-s);
+}
+
+.character-card {
+  position: relative;
+}
+
+.character-card > h2 {
+  display: flex;
+  padding: 12px;
+  justify-content: center;
+}

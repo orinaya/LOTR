@@ -1,0 +1,89 @@
+<main class="main-container">
+    <section class="top-bar ">
+        <div>
+            <div>
+            <a href="?page=dashboard"><img src="../public/assets/img/icons/icon-arrow-left.svg"/>Retour</a> 
+            </div>
+
+            <input type="search" class="searchbar" placeholder="Rechercher un film, un personnage..."/>
+        </div>  
+
+
+        <div>
+            <a href="?page=login" class="profile">
+                <p>Se connecter</p>
+                <img src="../public/assets/img/profile.png"/>
+            </a>
+            <div class="logout">
+                <img src="../public/assets/img/icons/icon-logout.svg"/>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="card-section">
+        <h2 class="container">Les 3 premiers films</h2>
+        <div class="card-container container">
+            <?php foreach($movies as $movie): ?>
+                <a href="?page=films-details&id= <?= $movie['id']?>" class="card-content movie-card" style="background-image: linear-gradient(hsla(0, 0%, 0%, 0),hsla(0, 0%, 0%, 0), hsl(0, 0%, 0%)), url(<?= $movie['url_picture']; ?>)">
+                
+                    <span>Rt Score <?= $movie['rt_score']; ?>%</span>
+
+                    <div>
+                        <div>
+                            <span><?= $movie['realisator']; ?></span>
+                            <span><?= $movie['release_date']; ?></span>
+                            <span><?= $movie['running_time']; ?> min</span>
+                        </div>
+
+                        <div>
+                            <h2><?= $movie['trilogy_title']; ?></h2>
+                            <p><?= $movie['movie_title']; ?></p>
+                        </div>
+                    </div>
+                
+                </a>
+            <?php endforeach; ?> 
+        </div>
+
+        <a href="?page=films" class="btn mint-primary container">Voir tous les films</a>
+    </div>
+
+    <div class="card-section">
+        <h2 class="container">Les meilleures citations</h2>
+        <div class="card-container container">
+            <?php foreach($quotes as $quote): ?>
+                <div  class="card-content quote-card" style="background-image: linear-gradient(hsla(0, 0%, 0%, 0),hsla(0, 0%, 0%, 0), hsl(0, 0%, 0%)), url(<?= $quote['url_picture']; ?>)">
+            
+                    <h3><?= $quote['quote']; ?></h3>
+                    <p class="quote-movie"><?= $quote['movie_title']; ?></p>
+                    <div>                
+                        <p><?= $quote['first_name']; ?></p>
+                        <p><?= $quote['last_name']; ?></p>
+                    </div>
+                </div>
+            <?php endforeach; ?>   
+        </div>
+        <a href="?page=citations" class="btn mint-primary container">Voir toutes les citations</a>
+    </div>
+
+    <div class="card-section">
+        <h2 class="container">Les meilleurs personnages</h2>
+        <div class="card-container container">
+            <?php foreach($characters as $character): ?>
+                    <a href="?page=personnages-details&id=<?= $character['id']?>"  class="card-content character-card" style="background-image: linear-gradient(hsla(0, 0%, 0%, 0),hsla(0, 0%, 0%, 0), hsl(0, 0%, 0%)), url(<?= $character['url_picture']; ?>)">
+                        <p><?= $character['last_name']; ?></p>
+                        <p><?= $character['first_name']; ?></p>
+                        <p><?= $character['race']; ?></p>
+                    </a>
+            <?php endforeach; ?>    
+        </div>
+        <a href="?page=personnages" class="btn mint-primary container">Voir tous les personnages</a>
+    </div>
+
+
+    <div>
+
+    </div>
+
+</main>

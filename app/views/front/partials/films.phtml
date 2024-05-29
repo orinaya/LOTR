@@ -1,0 +1,68 @@
+<main class="main-container">
+    <section class="top-bar ">
+        <div>
+            <div>
+                <a href="?page=dashboard"><img src="../public/assets/img/icons/icon-arrow-left.svg"/>Retour</a> 
+            </div>
+
+            <input type="search" class="searchbar" placeholder="Rechercher un film, un personnage..."/>
+        </div>  
+
+
+        <div>
+            <a href="?page=login" class="profile">
+                <p>Se connecter</p>
+                <img src="../public/assets/img/profile.png"/>
+            </a>
+            <div class="logout">
+                <img src="../public/assets/img/icons/icon-logout.svg"/>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="title-container container">
+        <h1>Films</h1>
+        <div class="filter-container">
+            <p class="filter-results">
+            <span><?php echo count($movies); ?></span> results
+            </p>
+            <form action="?page=films" method="POST" class="filter">
+                <select name="sort_type">
+                    <option value="default">Trier par</option>
+                    <option value="rt_score_asc">RT ASC</option>
+                    <option value="rt_score_desc">RT DESC</option>
+                    <option value="date_asc">Date ASC</option>
+                    <option value="date_desc">Date DESC</option>
+                </select>
+                <button type="submit" class="btn mint-secondary btn-form">Trier par</button>
+            </form>
+            
+        </div>
+    
+    </div>
+
+
+    <div class="card-container container">
+        <?php foreach($movies as $movie): ?>
+                <a href="?page=films-details&id= <?= $movie['id']?>" class="card-content movie-card" style="background-image: linear-gradient(hsla(0, 0%, 0%, 0),hsla(0, 0%, 0%, 0), hsl(0, 0%, 0%)), url(<?= $movie['url_picture']; ?>)">
+                
+                    <span>Rt Score <?= $movie['rt_score']; ?>%</span>
+
+                    <div>
+                        <div>
+                            <span><?= $movie['realisator']; ?></span>
+                            <span><?= $movie['release_date']; ?></span>
+                            <span><?= $movie['running_time']; ?> min</span>
+                        </div>
+
+                        <div>
+                            <h2><?= $movie['trilogy_title']; ?></h2>
+                            <p><?= $movie['movie_title']; ?></p>
+                        </div>
+                    </div>
+                
+                </a>
+        <?php endforeach; ?>    
+    </div>
+ </main>

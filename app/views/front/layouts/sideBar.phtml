@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/assets/css/stylestest.css">
+    <link rel="icon" type="image/x-icon" href="../public/assets/img/ring.png">
+    <title>La Terre du Milieu</title>
+</head>
+<body>
+
+<div class="main-layout">
+<aside> 
+<nav>
+        <div style='background-image: url(../public/assets/img/middle-earth.jpg)' >
+            <img src="../public/assets/img/lotr-logo.png"/>
+        </div>
+        <div>
+            <a href="?page=dashboard" class="nav-link <?php if(isset($_GET['page']) && $_GET['page']==='dashboard'){echo 'active';} ?>">
+                <img src="../public/assets/img/icons/icon-dashboard.svg"/>
+                <p>Tableau de bord</p>
+            </a>
+
+            <a href="?page=films" class="nav-link <?php if((isset($_GET['page']) && $_GET['page']==='films') ||(isset($_GET['page']) && $_GET['page']==='films-details') ){echo 'active';} ?>">
+                <img src="../public/assets/img/icons/icon-movies.svg"/>
+                <p>Films</p>
+            </a>
+
+            <a href="?page=personnages" class="nav-link <?php if((isset($_GET['page']) && $_GET['page']==='personnages') ||(isset($_GET['page']) && $_GET['page']==='personnages-details')){echo 'active';} ?>">
+                <img src="../public/assets/img/icons/icon-wizard.svg"/>
+                <p>Personnages</p>
+            </a>
+            <a href="?page=citations" class="nav-link <?php if(isset($_GET['page']) && $_GET['page']==='citations'){echo 'active';} ?>">
+                <img src="../public/assets/img/icons/icon-quote.svg"/>
+                <p>Citations</p>            
+            </a>
+        </div>
+    </nav>
+<!-- 
+    <iframe src="https://open.spotify.com/embed/playlist/3XB3USDq6aYo1NrX3V76Gq?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+  -->
+</aside>

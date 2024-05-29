@@ -1,0 +1,56 @@
+<main class="main-container">
+    <section class="top-bar ">
+        <div>
+            <div>
+            <a href="?page=dashboard"><img src="../public/assets/img/icons/icon-arrow-left.svg"/>Retour</a> 
+
+            </div>
+
+            <input type="search" class="searchbar" placeholder="Rechercher un film, un personnage..."/>
+        </div>  
+
+
+        <div>
+            <div class="profile">
+                <p>orinaya</p>
+                <img src="../public/assets/img/profile.png"/>
+            </div>
+            <div class="logout">
+                <img src="../public/assets/img/icons/icon-logout.svg"/>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+    <div class="title-container container">
+        <h1>Personnages</h1> 
+        <div class="filter-container">
+            <p class="filter-results">
+            <span><?php echo count($characters); ?></span> results
+            </p>
+            <form action="?page=personnages" method="POST">
+            <select name="sort_type">
+                    <option value="default">Trier par</option>
+                    <option value="name_asc">Nom ASC</option>
+                    <option value="name_desc">Nom DESC</option>
+                </select>
+                <button type="submit" class="btn mint-secondary btn-form">Trier</button>
+            <form/>
+            <a href="?page=ajouter-un-personnage" class="btn mint-primary">Ajouter un personnage</a>
+       </div>
+    
+    </div>
+    <div class="card-container container">
+        <?php foreach($characters as $character): ?>
+                <a href="?page=personnages-details&id=<?= $character['id']?>"  class="character-card" style="background-image: linear-gradient(hsla(0, 0%, 0%, 0),hsla(0, 0%, 0%, 0), hsl(0, 0%, 0%)), url(<?= $character['url_picture']; ?>)">
+                
+                    <p><?= $character['last_name']; ?></p>
+                    <p><?= $character['first_name']; ?></p>
+                    <p><?= $character['race']; ?></p>
+                </a>
+        <?php endforeach; ?>    
+    </div>
+</main>

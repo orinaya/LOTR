@@ -1,0 +1,114 @@
+<main class="main-container">
+    <section class="top-bar ">
+        <div>
+            <div>
+            <a href="?page=films"><img src="../public/assets/img/icons/icon-arrow-left.svg"/>Retour</a> 
+
+            </div>
+
+            <input type="search" class="searchbar" placeholder="Rechercher un film, un personnage..."/>
+        </div>  
+        <div>
+            <a href="?page=login" class="profile">
+                <p>Se connecter</p>
+                <img src="../public/assets/img/profile.png"/>
+            </a>
+            <div class="logout">
+                <img src="../public/assets/img/icons/icon-logout.svg"/>
+            </div>
+        </div>
+
+    </section>
+
+    <?php foreach($movies as $movie): ?>
+        <div class="movie-details_top">
+            <div class="container movie-details_content">
+                <div class="details-content_left"> 
+                    <div>
+                        <div  style="background-image: linear-gradient(hsla(0, 0%, 0%, 0),hsla(0, 0%, 0%, 0), hsl(0, 0%, 0%)), url(<?= $movie['url_picture']; ?>)">
+                            <span>Rt Score <?= $movie['rt_score']; ?>%</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <h1><?= $movie['trilogy_title']; ?></h1>
+                            <p><?= $movie['movie_title']; ?></p>
+                        </div>
+
+                        <div class="movie-description">
+                            <div>
+                                <p>Date de sortie</p>
+                                <p><?= $movie['release_date']; ?></p>
+                            </div>
+                            <div>
+                                <p>Réalisateur</p>
+                                <p><?= $movie['realisator']; ?></p>
+                            </div>
+                            <div>
+                                <p>Durée</p>
+                                <p><?= $movie['running_time']; ?> min</p>
+                            </div>
+                            <div>
+                                <p>Description</p>
+                                <p><?= $movie['movie_description']; ?> min</p>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="details-content_right"> 
+                    <div>
+                        <?php foreach($moviePictures as $pictures): ?>
+                            <img src="<?= $pictures['url_picture_movies'] ; ?>"/>
+                        <?php endforeach; ?>       
+                    </div>        
+                    <div>
+                        <h2>Caméo de Peter Jackson</h2>
+                        <div>
+                            <img src="<?= $movie['cameo_picture']; ?>"/>
+                            <p><?= $movie['cameo_description']; ?></p>
+                        </div>
+                    </div>
+                </div>            
+            </div>
+        </div>  
+
+        <div class="characters-container container">  
+            <h2>Personnages du film</h2>
+            <div>
+                <?php foreach($movieCharacters as $characters): ?>
+                    <div>
+                        <img src="<?= $characters['character_picture'] ; ?>"/>
+                        <div>
+                            <p><?= $characters['first_name'] ; ?></p>
+                            <p><?= $characters['last_name'] ; ?></p> 
+                        </div>
+                    </div>
+                <?php endforeach; ?>  
+            </div>      
+        </div>
+            
+        <div class="quotes-container container">
+            <h2>Citations</h2> 
+            <div class="card-container container">
+                <?php foreach($quotes as $quote): ?>
+                    <div  class="card-content quote-card" style="background-image: linear-gradient(hsla(0, 0%, 0%, 0),hsla(0, 0%, 0%, 0), hsl(0, 0%, 0%)), url(<?= $quote['url_picture']; ?>)">
+                
+                        <h3><?= $quote['quote']; ?></h3>
+                        <p class="quote-movie"><?= $quote['movie_title']; ?></p>
+                        <div>                
+                            <p><?= $quote['first_name']; ?></p>
+                            <p><?= $quote['last_name']; ?></p>
+                        </div>
+                    </div>
+                <?php endforeach; ?>   
+            </div>
+        </div>
+    <?php endforeach; ?>  
+      
+
+
+
+
+
+ </main>
